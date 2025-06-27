@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/fondo_con_bolitas"
+
+    android:orientation="vertical"
+    tools:context=".LoginActivity">
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:orientation="vertical"
+        android:layout_marginTop="300dp"
+        android:padding="30dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_bold"
+            android:text="Login"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="45dp"></TextView>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins"
+            android:text="Inicie sesion para continuar"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="15dp"></TextView>
+
+        <EditText
+            android:id="@+id/txt_usuario"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/fondo_verde"
+            android:drawableLeft="@drawable/outline_account_circle_24"
+            android:fontFamily="@font/poppins"
+            android:hint="Usuario"
+            android:padding="10dp"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
+            android:textCursorDrawable="@color/white"
+            android:textSize="14dp"></EditText>
+
+        <EditText
+            android:id="@+id/txtpass"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/fondo_verde"
+            android:drawableLeft="@drawable/icon_can"
+            android:fontFamily="@font/poppins"
+            android:hint="Contraseña"
+            android:inputType="textPassword"
+            android:padding="10dp"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
+            android:textCursorDrawable="@color/white"
+            android:textSize="14dp"></EditText>
+
+        <Button
+            android:id="@+id/btn_ingresar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:backgroundTint="@color/verde_agua"
+            android:fontFamily="@font/poppins_bold"
+            android:text="Ingresar"
+            android:textColorHighlight="@color/white"
+            android:textSize="15dp"
+            app:cornerRadius="10dp"></Button>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/poppins"
+            android:text="¿Aun no estas registrado?"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="15dp"></TextView>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_bold"
+            android:text="Registrate Ahora"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="15dp"></TextView>
+
+
+
+
+    </LinearLayout>
+
+
+
+</LinearLayout>
