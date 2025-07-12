@@ -14,9 +14,6 @@ import android.view.ViewGroup;
 import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.core.app.ActivityCompat;
-import androidx.core.content.ContextCompat;
-import androidx.fragment.app.Fragment;
-
 import com.appcali.pantalla_principal.BaseFragment;
 import com.appcali.pantalla_principal.Connection.AsistenciasBD;
 import com.appcali.pantalla_principal.R;
@@ -36,8 +33,8 @@ import java.util.Locale;
 public class RegistroFragment extends BaseFragment {
 
     private FragmentRegistroBinding binding;
-    private static final double LAT_PERMITIDA = -8.084261;
-    private static final double LON_PERMITIDA = -79.041214;
+    private static final double LAT_PERMITIDA = -8.080211;
+    private static final double LON_PERMITIDA = -79.035391;
     private static final float RANGO_PERMITIDO_METROS = 70;
     private static final int PERMISSION_REQUEST_CODE = 1;
 
