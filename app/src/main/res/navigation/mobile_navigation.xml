@@ -3,23 +3,63 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/navigation_home">
+    app:startDestination="@+id/panel">
 
     <fragment
-        android:id="@+id/navigation_home"
-        android:name="com.appcali.pantalla_principal.ui.home.HomeFragment"
-        android:label="@string/title_home"
-        tools:layout="@layout/fragment_home" />
+        android:id="@+id/panel"
+        android:name="com.appcali.pantalla_principal.ui.Panel_Control.Panel_ControlFragment"
+        android:label="@string/title_Panel_Prin"
+        tools:layout="@layout/fragment_panel_control" />
+    <fragment
+        android:id="@+id/informe_asis"
+        android:name="com.appcali.pantalla_principal.ui.AsisAdministrador.AsisAdminFragment"
+        android:label="@string/title_informe_Add"
+        tools:layout="@layout/fragment_asis_admin" />
 
     <fragment
-        android:id="@+id/navigation_dashboard"
-        android:name="com.appcali.pantalla_principal.ui.dashboard.DashboardFragment"
-        android:label="@string/title_dashboard"
-        tools:layout="@layout/fragment_dashboard" />
+        android:id="@+id/registro"
+        android:name="com.appcali.pantalla_principal.ui.Registro.RegistroFragment"
+        android:label="@string/title_registro"
+        tools:layout="@layout/fragment_registro" />
 
     <fragment
-        android:id="@+id/navigation_notifications"
-        android:name="com.appcali.pantalla_principal.ui.notifications.NotificationsFragment"
-        android:label="@string/title_notifications"
-        tools:layout="@layout/fragment_notifications" />
+        android:id="@+id/mis_asistencias"
+        android:name="com.appcali.pantalla_principal.ui.AsisUsuarios.AsisUsuariosFragment"
+        android:label="@string/title_informe_User"
+        tools:layout="@layout/fragment_asis_usuarios" />
+
+    <fragment
+        android:id="@+id/empleados"
+        android:name="com.appcali.pantalla_principal.ui.Empleados.EmpleadosFragment"
+        android:label="@string/title_empleados"
+        tools:layout="@layout/fragment_empleados" />
+    <fragment
+        android:id="@+id/departamentos"
+        android:name="com.appcali.pantalla_principal.ui.Departamentos.DepartamentosFragment"
+        android:label="@string/title_departamentos"
+        tools:layout="@layout/fragment_departamentos" />
+
+    <fragment
+        android:id="@+id/cargos"
+        android:name="com.appcali.pantalla_principal.ui.Cargos.CargosFragment"
+        android:label="@string/title_cargos"
+        tools:layout="@layout/fragment_cargos" />
+
+    <fragment
+        android:id="@+id/roles"
+        android:name="com.appcali.pantalla_principal.ui.Roles.RolesFragment"
+        android:label="@string/title_roles"
+        tools:layout="@layout/fragment_roles" />
+
+    <fragment
+        android:id="@+id/perfil"
+        android:name="com.appcali.pantalla_principal.ui.Perfil.PerfilFragment"
+        android:label="@string/title_perfil"
+        tools:layout="@layout/fragment_perfil" />
+
+    <fragment
+        android:id="@+id/configuracion"
+        android:name="com.appcali.pantalla_principal.ui.Configuracion.ConfiguracionFragment"
+        android:label="@string/title_config"
+        tools:layout="@layout/fragment_configuracion" />
 </navigation>

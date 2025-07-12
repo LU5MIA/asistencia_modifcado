@@ -1,0 +1,66 @@
+<!-- res/layout/header.xml -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/header_title"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="20dp">
+
+    <ImageView
+        android:id="@+id/imageView8"
+        android:layout_width="match_parent"
+        android:layout_height="77dp"
+        android:layout_marginBottom="10dp"
+        android:src="@drawable/logo_nuevo2" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/fondo"
+            android:layout_width="match_parent"
+            android:layout_height="57dp"
+            android:src="@drawable/fondo_icons"
+            android:clickable="false"
+            android:focusable="false"
+            />
+
+        <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <!-- Botón de cerrar sesión -->
+            <ImageButton
+                android:id="@+id/ibtn_sesion"
+                android:layout_width="40dp"
+                android:paddingRight="18dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="8dp"
+                android:background="@android:color/transparent"
+                android:contentDescription="Cerrar sesión"
+                android:src="@drawable/baseline_arrow_drop_down_24"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/ibtn_Modo"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <!-- Botón de modo -->
+            <ImageButton
+                android:id="@+id/ibtn_Modo"
+                android:layout_width="40dp"
+                android:layout_height="50dp"
+                android:layout_marginEnd="8dp"
+                android:paddingRight="10dp"
+                android:background="@android:color/transparent"
+                android:contentDescription="Modo admin/empleado"
+                android:src="@drawable/outline_admin_panel_settings_24"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </FrameLayout>
+</LinearLayout>

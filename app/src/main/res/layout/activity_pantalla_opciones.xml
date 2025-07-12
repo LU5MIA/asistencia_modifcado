@@ -5,19 +5,22 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+
+
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/nav_view"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:background="#288f72"
+        android:background="@color/verde_agua_oscuro"
         app:itemIconSize="24dp"
         app:itemIconTint="@color/white"
-        app:itemRippleColor="@color/material_dynamic_neutral_variant70"
         app:itemTextColor="@color/white"
+        app:itemRippleColor="@color/transparente"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:menu="@menu/bottom_nav_menu" />
+
 
     <fragment
         android:id="@+id/nav_host_fragment_activity_pantalla_opciones"

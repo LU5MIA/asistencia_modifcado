@@ -1,0 +1,43 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:padding="24dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/txt_cargo_empleado"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Cargo del empleado"
+            android:textAllCaps="true"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:paddingBottom="8dp" />
+
+        <TextView
+            android:id="@+id/txt_nombre_empleado"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Nombre del empleado"
+            android:textSize="17sp"
+            android:gravity="center"
+            android:paddingBottom="8dp" />
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_cerrar_sesion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Cerrar sesión"
+        android:backgroundTint="#E53935"
+        android:textColor="#FFFFFF" />
+</LinearLayout>

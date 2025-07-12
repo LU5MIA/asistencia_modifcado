@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="BottomNavItemStyle.NoRipple" parent="Widget.Material3.BottomNavigationView">
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:foreground">@null</item>
+        <item name="itemRippleColor">@android:color/transparent</item>
+        <item name="itemBackground">@android:color/transparent</item>
+        <item name="android:stateListAnimator">@null</item> <!-- evita animación de presión -->
+    </style>
+    <style name="ThemeOverlay.NoRipple" parent="">
+        <item name="colorControlHighlight">@android:color/transparent</item> <!-- Elimina ripple -->
+        <item name="itemRippleColor">@android:color/transparent</item>       <!-- Elimina ripple en Material3 -->
+        <item name="itemBackground">@android:color/transparent</item>         <!-- Fondo transparente -->
+    </style>
+
+</resources>

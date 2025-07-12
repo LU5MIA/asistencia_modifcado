@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.Registro.RegistroFragment">
+
+    <TextView
+        android:id="@+id/text_dashboard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="-8dp"
+        tools:layout_editor_absoluteY="-6dp"
+        >
+
+        <com.appcali.pantalla_principal.componentes.HeaderView
+            android:id="@+id/header_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:ignore="MissingConstraints" />
+
+        <TextView
+            android:id="@+id/lbl_registro"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Registro de Asistencia de Entrada"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="15dp"
+            android:textColor="@color/black"
+            android:fontFamily="@font/poppins"
+            android:textSize="16sp">
+
+        </TextView>
+
+        <TextView
+            android:id="@+id/lblDetalleCierre"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textColor="@android:color/holo_red_dark"
+            android:textSize="15sp"
+            android:layout_marginTop="4dp"
+            android:layout_marginLeft="15dp"
+            android:gravity="left"
+            android:fontFamily="@font/poppins"
+            android:visibility="gone" />
+
+
+        <TextView
+            android:id="@+id/lblhora"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/fondo_icons"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp"
+            android:paddingTop="12dp"
+            android:paddingBottom="12dp"
+            android:text="Fecha y Hora"
+            android:drawableRight="@drawable/outline_av_timer_24"
+            android:layout_margin="16dp"
+            android:textColor="@color/white"
+            android:fontFamily="@font/poppins"
+            android:textSize="16sp"
+            android:drawablePadding="8dp"/>
+
+        <TextView
+            android:id="@+id/lblubic"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Ubicacion"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="15dp"
+            android:textColor="@color/black"
+            android:fontFamily="@font/poppins"
+            android:textSize="16sp">
+
+        </TextView>
+
+        <TextView
+            android:id="@+id/lblubicacion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Ubicacion de entrada o salida"
+            android:background="@drawable/fondo_icons"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp"
+            android:paddingTop="12dp"
+            android:paddingBottom="12dp"
+            android:drawableRight="@drawable/outline_add_location_alt_24"
+            android:layout_margin="16dp"
+            android:textColor="@color/white"
+            android:fontFamily="@font/poppins"
+            android:textSize="16sp"
+            android:drawablePadding="8dp"/>
+
+        <TextView
+            android:id="@+id/lblcons"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Consideracion"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="15dp"
+            android:textColor="@color/black"
+            android:fontFamily="@font/poppins"
+            android:textSize="16sp">
+
+        </TextView>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/lblconsideracion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/fondo_icons"
+                android:paddingStart="20dp"
+                android:paddingEnd="20dp"
+                android:paddingTop="12dp"
+                android:paddingBottom="12dp"
+                android:layout_margin="16dp"
+                android:textColor="@color/white"
+                android:fontFamily="@font/poppins"
+                android:textSize="16sp"
+                android:text="Correcto o Incorrecto"
+                android:drawablePadding="8dp"/>
+
+            <ImageButton
+                android:id="@+id/btn_actualizar"
+                android:layout_width="99dp"
+                android:layout_height="match_parent"
+                android:background="@color/transparente"
+                android:src="@drawable/outline_360_24"
+                android:layout_gravity="right"
+                >
+            </ImageButton>
+        </FrameLayout>
+
+        <Button
+            android:id="@+id/btn_marcar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/verde_agua"
+            android:fontFamily="@font/poppins"
+            android:layout_marginTop="30dp"
+            android:textSize="16sp"
+            android:text="✅  Marcar Asistencia"
+            >
+
+        </Button>
+
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

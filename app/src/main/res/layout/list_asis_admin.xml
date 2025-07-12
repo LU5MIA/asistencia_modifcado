@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    android:animateLayoutChanges="true"
+    app:cardCornerRadius="12dp"
+    app:cardElevation="4dp"
+    app:cardUseCompatPadding="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="12dp"
+        android:animateLayoutChanges="true">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <!-- Columna 1: ID -->
+            <TextView
+                android:id="@+id/txt_col1"
+                android:layout_width="40dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:text="ID"
+                android:textColor="@android:color/black"
+                android:textStyle="bold"
+                android:gravity="center" />
+
+            <!-- Columna 2: Nombre completo -->
+            <TextView
+                android:id="@+id/txt_col2"
+                android:layout_width="104dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="0dp"
+                android:layout_marginEnd="28dp"
+                android:layout_toStartOf="@id/txt_col3"
+                android:layout_toEndOf="@id/txt_col1"
+                android:text="Nombre Empleado"
+                android:textColor="@android:color/black"
+                android:textSize="14sp"
+                android:inputType="textMultiLine" />
+
+
+            <!-- Columna 3: Tipo (Entrada/Salida) -->
+
+            <!-- Columna 4: Estado -->
+            <TextView
+                android:id="@+id/txt_col3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="27dp"
+                android:layout_marginRight="10dp"
+                android:layout_toStartOf="@id/txt_col4"
+                android:layout_toLeftOf="@id/txt_col4"
+                android:gravity="center"
+                android:padding="6dp"
+                android:text="Entrada"
+                android:textColor="@android:color/black"
+                />
+
+            <TextView
+                android:id="@+id/txt_col4"
+                android:layout_width="101dp"
+                android:layout_height="34dp"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="8dp"
+                android:gravity="center"
+                android:padding="6dp"
+                android:text="Correcto"
+                android:textColor="@android:color/white"
+                android:textStyle="bold" />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

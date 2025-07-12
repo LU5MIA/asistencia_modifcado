@@ -5,6 +5,12 @@
     <color name="verde_oscuro">#288f72</color>
     <color name="verde_claro">#907fda89</color>
     <color name="verde_agua">#24ce9e</color>
+    <color name="verde_agua_oscuro">#03bb85</color>
     <color name="transparente">#00000000</color>
+    <color name="negro_claro">#4d4c4c</color>
+    <color name="morado">#9C27B0</color>
+    <color name="rojo_alerta">#D32F2F</color>
 
+
+    #1A9C78
 </resources>

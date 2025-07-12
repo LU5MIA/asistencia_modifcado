@@ -1,7 +1,22 @@
 <resources>
-    <string name="app_name">Pantalla_principal</string>
+    <string name="app_name">Asist</string>
     <string name="title_activity_pantalla_opciones">Pantalla_opciones</string>
-    <string name="title_home">Home</string>
-    <string name="title_dashboard">Dashboard</string>
-    <string name="title_notifications">Notifications</string>
+    <string name="title_Panel_Prin">Panel</string>
+    <string name="title_informe_Add">Informe</string>
+    <string name="title_registro">Registro</string>
+    <string name="title_informe_User">Mis Asistencias</string>
+    <string name="title_empleados">Empleados</string>
+    <string name="title_departamentos">Departamentos</string>
+    <string name="title_cargos">Cargos</string>
+    <string name="title_roles">Roles</string>
+    <string name="title_perfil">Perfil</string>
+    <string name="title_config">Configuracion</string>
+    <string name="title_mas">Mas</string>
+    <string-array name="opciones_cantidad">
+        <item>10</item>
+        <item>15</item>
+        <item>50</item>
+    </string-array>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

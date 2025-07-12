@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="24dp"
+    android:orientation="vertical"
+    android:background="@drawable/bg_dialog"
+    android:elevation="8dp">
+
+    <TextView
+        android:id="@+id/tvTitulo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Nuevo Empleado"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textColor="#333"
+        android:gravity="center"
+        android:layout_marginBottom="12dp"
+        android:paddingBottom="12dp" />
+
+    <EditText
+        android:id="@+id/etdni"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:hint="DNI"
+        android:inputType="number"
+        android:maxLength="8"
+        android:padding="10dp"
+        android:background="@drawable/bg_edittext"
+        android:layout_marginBottom="12dp" />
+
+    <EditText
+        android:id="@+id/etNombre"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:hint="Nombre completo"
+        android:inputType="textPersonName"
+        android:padding="10dp"
+        android:background="@drawable/bg_edittext"
+        android:layout_marginBottom="12dp" />
+
+    <EditText
+        android:id="@+id/etApe_pater"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:hint="Apellido Paterno"
+        android:inputType="textPersonName"
+        android:padding="10dp"
+        android:background="@drawable/bg_edittext"
+        android:layout_marginBottom="12dp" />
+
+    <EditText
+        android:id="@+id/etApe_Mater"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:hint="Apellido Materno"
+        android:inputType="textPersonName"
+        android:padding="10dp"
+        android:background="@drawable/bg_edittext"
+        android:layout_marginBottom="12dp" />
+
+    <EditText
+        android:id="@+id/etCorreo"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:hint="Correo Electronico"
+        android:inputType="textEmailAddress"
+        android:padding="10dp"
+        android:background="@drawable/bg_edittext"
+        android:layout_marginBottom="12dp" />
+
+    <AutoCompleteTextView
+        android:id="@+id/autoDepartamento"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:hint="Departamento"
+        android:padding="10dp"
+        android:background="@drawable/bg_edittext"
+        android:layout_marginBottom="20dp"
+        android:inputType="none"
+        android:focusable="false" />
+
+    <AutoCompleteTextView
+        android:id="@+id/autoCargo"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:hint="Cargo"
+        android:padding="10dp"
+        android:background="@drawable/bg_edittext"
+        android:layout_marginBottom="20dp"
+        android:inputType="none"
+        android:focusable="false" />
+
+    <Button
+        android:id="@+id/btnGuardar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Guardar"
+        android:textAllCaps="false"
+        android:textColor="@android:color/white"
+        android:backgroundTint="#24ce9e"
+        android:layout_marginTop="8dp" />
+</LinearLayout>

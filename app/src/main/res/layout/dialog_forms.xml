@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="24dp"
+    android:orientation="vertical"
+    android:background="@drawable/bg_dialog"
+    android:elevation="8dp">
+
+    <TextView
+        android:id="@+id/tvTitulo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Nuevo Departamento"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textColor="#333"
+        android:gravity="center"
+        android:layout_marginBottom="12dp"
+        android:paddingBottom="12dp" />
+
+    <EditText
+        android:id="@+id/etNombre"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:hint="Nombre"
+        android:inputType="textPersonName"
+        android:padding="10dp"
+        android:background="@drawable/bg_edittext"
+        android:layout_marginBottom="12dp" />
+
+    <Button
+        android:id="@+id/btnGuardar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Guardar"
+        android:textAllCaps="false"
+        android:textColor="@android:color/white"
+        android:backgroundTint="#24ce9e"
+        android:layout_marginTop="8dp" />
+</LinearLayout>

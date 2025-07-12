@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.Roles.RolesFragment">
+
+    <TextView
+        android:id="@+id/text_home"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.977" />
+
+    <com.appcali.pantalla_principal.componentes.HeaderView
+        android:id="@+id/header_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_bold"
+        android:text="Listado de Roles"
+        android:textColor="#4d4c4c"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.125"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.251" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="376dp"
+        android:layout_height="57dp"
+        android:src="@drawable/fondo_icons"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.542"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.326"
+        tools:ignore="MissingConstraints" />
+
+
+    <Spinner
+        android:id="@+id/spCantidad"
+        android:layout_width="1dp"
+        android:layout_height="5dp"
+        android:background="@color/white"
+        android:entries="@array/opciones_cantidad"
+        android:textAlignment="center"
+        android:visibility="invisible"
+        app:cornerRadius="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.099"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.381" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_roles"
+        android:layout_width="378dp"
+        android:layout_height="343dp"
+        app:layout_constraintBottom_toBottomOf="@+id/text_home"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.558"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+        app:layout_constraintVertical_bias="0.068" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="378dp"
+        android:layout_height="22dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.515"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.42">
+
+        <!-- Columna 1: Id -->
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="54dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="40dp"
+            android:fontFamily="@font/poppins_bold"
+            android:text="Id"
+            android:textAlignment="center"
+            android:textColor="#4d4c4c"
+            android:textSize="14sp" />
+
+        <!-- Columna 2: Cargo -->
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="43dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="55dp"
+            android:fontFamily="@font/poppins_bold"
+            android:text="Rol"
+            android:textAlignment="center"
+            android:textColor="#4d4c4c"
+            android:textSize="14sp" />
+
+        <!-- Columna 3: Estado-->
+        <TextView
+            android:id="@+id/textViewTipo"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="20dp"
+            android:fontFamily="@font/poppins_bold"
+            android:text="Estado"
+            android:textAlignment="center"
+            android:textColor="#4d4c4c"
+            android:textSize="14sp" />
+
+        <!-- Columna 4: Opciones -->
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="85dp"
+            android:layout_height="23dp"
+            android:fontFamily="@font/poppins_bold"
+            android:text="Opciones"
+            android:textAlignment="center"
+            android:textColor="#4d4c4c"
+            android:textSize="14sp" />
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
