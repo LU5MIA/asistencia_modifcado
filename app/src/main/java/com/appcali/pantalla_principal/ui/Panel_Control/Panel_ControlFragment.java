@@ -76,8 +76,16 @@ public class Panel_ControlFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_panel_control, container, false);
 
         // Buscar los botones
-
+        View btnNosotros = view.findViewById(R.id.btnnosotros);
         View btnConfiguracion = view.findViewById(R.id.btnconfiguracion);
+        btnNosotros.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), NosotrosActivity.class);
+                startActivity(intent);
+            }
+        });
+
         btnConfiguracion.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
