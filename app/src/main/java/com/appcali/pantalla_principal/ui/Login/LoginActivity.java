@@ -46,6 +46,31 @@ public class LoginActivity extends AppCompatActivity {
         clave = (EditText) findViewById(R.id.txtpass);
         btningresar = (Button) findViewById(R.id.btn_ingresar);
 
+        final boolean[] isPasswordVisible = {false};
+
+        clave.setOnTouchListener((v, event) -> {
+            final int DRAWABLE_LEFT = 0; // Índice del drawableLeft
+            if (event.getAction() == android.view.MotionEvent.ACTION_UP) {
+                if (event.getRawX() <= (clave.getLeft() + clave.getCompoundDrawables()[DRAWABLE_LEFT].getBounds().width() + clave.getPaddingLeft())) {
+                    // Cambiar visibilidad
+                    if (isPasswordVisible[0]) {
+                        // Ocultar contraseña
+                        clave.setInputType(android.text.InputType.TYPE_CLASS_TEXT | android.text.InputType.TYPE_TEXT_VARIATION_PASSWORD);
+                        clave.setCompoundDrawablesWithIntrinsicBounds(R.drawable.icon_can, 0, 0, 0);
+                    } else {
+                        // Mostrar contraseña
+                        clave.setInputType(android.text.InputType.TYPE_CLASS_TEXT | android.text.InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD);
+                        clave.setCompoundDrawablesWithIntrinsicBounds(R.drawable.outline_lock_open_24, 0, 0, 0);
+                    }
+                    clave.setSelection(clave.getText().length()); // Mantener el cursor al final
+                    isPasswordVisible[0] = !isPasswordVisible[0];
+                    return true;
+                }
+            }
+            return false;
+        });
+
+
         btningresar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
