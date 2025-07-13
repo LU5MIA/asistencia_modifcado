@@ -13,9 +13,11 @@ import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.appcali.pantalla_principal.R;
+import com.appcali.pantalla_principal.entidades.Departamentos;
 import com.appcali.pantalla_principal.entidades.Roles;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class ListaRolesAdapter extends RecyclerView.Adapter<ListaRolesAdapter.RolesViewHolder> {
 
@@ -25,6 +27,12 @@ public class ListaRolesAdapter extends RecyclerView.Adapter<ListaRolesAdapter.Ro
 
     ArrayList<Roles> listaroles;
     private ListaRolesAdapter.OnRolClickListener listener;
+
+    public void actualizarLista(ArrayList<Roles> nuevaLista) {
+        this.listaroles = nuevaLista;
+        notifyDataSetChanged();
+    }
+
 
     public void setOnRolesClickListener(ListaRolesAdapter.OnRolClickListener listener) {
         this.listener = listener;

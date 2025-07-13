@@ -56,6 +56,36 @@
         app:layout_constraintVertical_bias="0.326"
         tools:ignore="MissingConstraints" />
 
+    <ImageButton
+        android:id="@+id/ibtn_filtrador"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_marginStart="40dp"
+        android:background="@color/transparente"
+        android:clickable="true"
+        android:src="@drawable/baseline_align_horizontal_left_24"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/imageView7"
+        app:layout_constraintHorizontal_bias="0.021"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.33" />
+
+
+    <ImageButton
+        android:id="@+id/btn_agregar_rol"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_marginStart="40dp"
+        android:background="@color/transparente"
+        android:clickable="true"
+        android:src="@drawable/outline_add_box_24"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/imageView7"
+        app:layout_constraintHorizontal_bias="0.586"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.331" />
 
     <Spinner
         android:id="@+id/spCantidad"
@@ -72,6 +102,49 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.381" />
+
+    <ImageView
+        android:id="@+id/imageView7"
+        android:layout_width="231dp"
+        android:layout_height="34dp"
+        android:src="@drawable/fondo_buscar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.815"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.33" />
+
+    <EditText
+        android:id="@+id/txtbuscarrol"
+        android:layout_width="198dp"
+        android:layout_height="44dp"
+        android:backgroundTint="@color/white"
+        android:ems="10"
+        android:hint="Ingrese rol.."
+        android:inputType="text"
+        android:textColorLink="#E8D8D8"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.755"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.33" />
+
+    <ImageButton
+        android:id="@+id/ibtnBuscar"
+        android:layout_width="36dp"
+        android:layout_height="44dp"
+        android:background="@color/transparente"
+        android:clickable="true"
+        android:src="@drawable/icono_lupa"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.882"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.33" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_roles"

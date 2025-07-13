@@ -133,7 +133,10 @@ public class CargosFragment extends BaseFragment {
     private void mostrarDialogoAgregarCargo() {
         View formulario = LayoutInflater.from(getContext()).inflate(R.layout.dialog_forms, null);
         EditText etNombreCargo = formulario.findViewById(R.id.etNombre);
+        TextView tvTitulo = formulario.findViewById(R.id.tvTitulo);
         Button btnGuardar = formulario.findViewById(R.id.btnGuardar);
+
+        tvTitulo.setText("Nuevo Cargo");
 
         AlertDialog dialog = new AlertDialog.Builder(getContext())
                 .setView(formulario)

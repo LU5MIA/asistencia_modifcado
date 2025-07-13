@@ -18,7 +18,7 @@ import com.appcali.pantalla_principal.Connection.ConnectionBD;
 import com.appcali.pantalla_principal.Connection.UsuariosBD;
 import com.appcali.pantalla_principal.Pantalla_opciones;
 import com.appcali.pantalla_principal.R;
-import com.google.android.material.bottomnavigation.BottomNavigationView;
+
 
 import java.sql.Connection;
 import java.sql.ResultSet;

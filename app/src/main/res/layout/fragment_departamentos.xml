@@ -72,21 +72,6 @@
         app:layout_constraintVertical_bias="0.33" />
 
 
-    <ImageButton
-        android:id="@+id/btn_agregar_dpto"
-        android:layout_width="32dp"
-        android:layout_height="32dp"
-        android:layout_marginStart="40dp"
-        android:background="@color/transparente"
-        android:clickable="true"
-        android:src="@drawable/outline_add_box_24"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/imageView7"
-        app:layout_constraintHorizontal_bias="0.586"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.331" />
-
     <Spinner
         android:id="@+id/spCantidad"
         android:layout_width="1dp"
@@ -102,6 +87,23 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.381" />
+
+
+    <ImageButton
+        android:id="@+id/btn_agregar_dpto"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_marginStart="40dp"
+        android:background="@color/transparente"
+        android:clickable="true"
+        android:src="@drawable/outline_add_box_24"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/imageView7"
+        app:layout_constraintHorizontal_bias="0.586"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.331" />
+
 
     <ImageView
         android:id="@+id/imageView7"

@@ -179,13 +179,60 @@ public class AsistenciasBD {
         return existe;
     }
 
+    public int contarAsistenciasEntrada() {
+        int total = 0;
+        ConnectionBD connectionBD = new ConnectionBD();
+        Connection conn = null;
+        PreparedStatement stmt = null;
+        ResultSet rs = null;
 
+        try {
+            conn = connectionBD.connect();
+            if (conn != null) {
+                String sql = "SELECT COUNT(*) FROM asistencias WHERE tipo = 'entrada'";
+                stmt = conn.prepareStatement(sql);
+                rs = stmt.executeQuery();
+                if (rs.next()) {
+                    total = rs.getInt(1);
+                }
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            try { if (rs != null) rs.close(); } catch (Exception e) {}
+            try { if (stmt != null) stmt.close(); } catch (Exception e) {}
+            try { if (conn != null) conn.close(); } catch (Exception e) {}
+        }
 
+        return total;
+    }
 
+    public int contarAsistenciasSalida() {
+        int total = 0;
+        ConnectionBD connectionBD = new ConnectionBD();
+        Connection conn = null;
+        PreparedStatement stmt = null;
+        ResultSet rs = null;
 
+        try {
+            conn = connectionBD.connect();
+            if (conn != null) {
+                String sql = "SELECT COUNT(*) FROM asistencias WHERE tipo = 'salida'";
+                stmt = conn.prepareStatement(sql);
+                rs = stmt.executeQuery();
+                if (rs.next()) {
+                    total = rs.getInt(1);
+                }
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            try { if (rs != null) rs.close(); } catch (Exception e) {}
+            try { if (stmt != null) stmt.close(); } catch (Exception e) {}
+            try { if (conn != null) conn.close(); } catch (Exception e) {}
+        }
 
-
-
-
+        return total;
+    }
 
 }

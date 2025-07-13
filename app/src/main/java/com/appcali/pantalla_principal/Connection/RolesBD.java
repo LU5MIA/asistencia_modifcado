@@ -32,6 +32,25 @@ public class RolesBD {
         return lista;
     }
 
+    public boolean agregarRol(String nombre, String estado) {
+        ConnectionBD connectionBD = new ConnectionBD();
+        String sql = "INSERT INTO roles (nombre, estado) VALUES (?, ?)";
+
+        try (Connection conn = connectionBD.connect();
+             PreparedStatement stmt = conn.prepareStatement(sql)) {
+
+            stmt.setString(1, nombre);
+            stmt.setString(2, estado);
+
+            int filasAfectadas = stmt.executeUpdate();
+            return filasAfectadas > 0;
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
+
     public boolean actualizarRol(int idRoles, String nuevoNombre) {
         ConnectionBD connectionBD = new ConnectionBD();
         String sql = "UPDATE roles SET nombre = ? WHERE id_roles = ?";

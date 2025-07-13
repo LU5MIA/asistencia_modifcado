@@ -13,6 +13,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.appcali.pantalla_principal.Connection.AsistenciasBD;
 import com.appcali.pantalla_principal.ui.Configuracion.ConfiguracionFragment;
 import com.appcali.pantalla_principal.Connection.CargosBD;
 import com.appcali.pantalla_principal.Connection.DepartamentosBD;
@@ -75,7 +76,7 @@ public class Panel_ControlFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_panel_control, container, false);
 
         // Buscar los botones
-        View btnNosotros = view.findViewById(R.id.btnnosotros);
+
         View btnConfiguracion = view.findViewById(R.id.btnconfiguracion);
         btnConfiguracion.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -85,21 +86,22 @@ public class Panel_ControlFragment extends Fragment {
             }
         });
 
-        // Listener para abrir NosotrosActivity
-        btnNosotros.setOnClickListener(v -> {
-            startActivity(new Intent(getActivity(), NosotrosActivity.class));
-        });
-
+        TextView tvTotalEntradas = view.findViewById(R.id.tvtotalentrada);
+        TextView tvTotalSalidas = view.findViewById(R.id.tvTotalsalidas);
         TextView tvTotalEmpleados = view.findViewById(R.id.tvTotalEmpleados);
         TextView tvTotalDepartamentos = view.findViewById(R.id.tvTotalDepartamentos);
         TextView tvTotalCargos = view.findViewById(R.id.tvTotalCargos);
         TextView tvTotalRoles = view.findViewById(R.id.tvTotalRoles);
 
+        int totalentradas = new AsistenciasBD().contarAsistenciasEntrada();
+        int totalsalidas = new AsistenciasBD().contarAsistenciasSalida();
         int totalEmpleados = new EmpleadosBD().contarEmpleados();
         int totalDepartamentos = new DepartamentosBD().contarDepartamentos();
         int totalCargos = new CargosBD().contarCargos();
         int totalRoles = new RolesBD().contarRoles();
 
+        tvTotalEntradas.setText(String.valueOf(totalentradas));
+        tvTotalSalidas.setText(String.valueOf(totalsalidas));
         tvTotalEmpleados.setText(String.valueOf(totalEmpleados));
         tvTotalDepartamentos.setText(String.valueOf(totalDepartamentos));
         tvTotalCargos.setText(String.valueOf(totalCargos));

@@ -7,11 +7,17 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
+import android.widget.Spinner;
+import android.widget.TextView;
 
 import com.appcali.pantalla_principal.Adaptadores.ListaRolesAdapter;
 import com.appcali.pantalla_principal.BaseFragment;
@@ -20,6 +26,7 @@ import com.appcali.pantalla_principal.R;
 import com.appcali.pantalla_principal.entidades.Roles;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import es.dmoral.toasty.Toasty;
 
@@ -69,24 +76,110 @@ public class RolesFragment extends BaseFragment {
         adapter = new ListaRolesAdapter(listaRoles);
         recyclerView.setAdapter(adapter);
 
+        EditText txtBuscarRol = view.findViewById(R.id.txtbuscarrol);
+
+        txtBuscarRol.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                filtrarRoles(s.toString());
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {}
+        });
+
+        Spinner spCantidad = view.findViewById(R.id.spCantidad);
+
+        // Mostrar spinner al presionar el ImageButton (opcional)
+        ImageButton ibtnFiltrador = view.findViewById(R.id.ibtn_filtrador);
+        ibtnFiltrador.setOnClickListener(v -> {
+            spCantidad.performClick(); // Mostrar el spinner
+        });
+
+        spCantidad.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                String seleccion = parent.getItemAtPosition(position).toString();
+                int cantidad = Integer.parseInt(seleccion);
+
+                filtrarPorCantidad(cantidad); // Esto se activa solo cuando el usuario elige una cantidad
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {}
+        });
+
 
         adapter.setOnRolesClickListener(new ListaRolesAdapter.OnRolClickListener() {
             @Override
             public void onEditarClick(Roles rol) {
                 mostrarDialogoEditarRol(rol);
             }
+
         });
+
+        ImageButton btnAgregarRol = view.findViewById(R.id.btn_agregar_rol);
+        btnAgregarRol.setOnClickListener(v -> mostrarDialogoAgregarRol());
+
 
         return view;
     }
 
-    private void mostrarDialogoEditarRol(Roles rol) {
+    private void mostrarDialogoAgregarRol() {
         LayoutInflater inflater = LayoutInflater.from(getContext());
         View form = inflater.inflate(R.layout.dialog_forms, null);
-
+        TextView tvTitulo = form.findViewById(R.id.tvTitulo);
         EditText etNombre = form.findViewById(R.id.etNombre);
         Button btnGuardar = form.findViewById(R.id.btnGuardar);
 
+        tvTitulo.setText("Agregar Rol");
+
+        AlertDialog dialog = new AlertDialog.Builder(getContext())
+                .setView(form)
+                .create();
+
+        btnGuardar.setOnClickListener(v -> {
+            String nombreRol = etNombre.getText().toString().trim();
+
+            if (nombreRol.isEmpty()) {
+                etNombre.setError("Ingrese un nombre");
+                return;
+            }
+
+            RolesBD bd = new RolesBD();
+            boolean agregado = bd.agregarRol(nombreRol, "Activo");
+
+            if (agregado) {
+                // Vuelve a cargar la lista completa desde la BD
+                listaRoles.clear();
+                listaRoles.addAll(bd.obtenerRoles());
+
+                // Mostrar todos los roles sin aplicar filtro
+                adapter.actualizarLista(listaRoles);
+
+                Toasty.success(getContext(), "Rol agregado", Toasty.LENGTH_SHORT).show();
+            } else {
+                Toasty.error(getContext(), "Error al agregar", Toasty.LENGTH_SHORT).show();
+            }
+
+            dialog.dismiss();
+        });
+
+        dialog.show();
+    }
+
+
+    private void mostrarDialogoEditarRol(Roles rol) {
+        LayoutInflater inflater = LayoutInflater.from(getContext());
+        View form = inflater.inflate(R.layout.dialog_forms, null);
+        TextView tvTitulo = form.findViewById(R.id.tvTitulo);
+        EditText etNombre = form.findViewById(R.id.etNombre);
+        Button btnGuardar = form.findViewById(R.id.btnGuardar);
+
+        tvTitulo.setText("Editar Rol");
         etNombre.setText(rol.getNombre());
 
         AlertDialog dialog = new AlertDialog.Builder(getContext())
@@ -117,4 +210,30 @@ public class RolesFragment extends BaseFragment {
 
         dialog.show();
     }
+
+    private void filtrarRoles(String texto) {
+        ArrayList<Roles> listaFiltrada = new ArrayList<>();
+
+        for (Roles rol : listaRoles) {
+            if (rol.getNombre().toLowerCase().contains(texto.toLowerCase())) {
+                listaFiltrada.add(rol);
+            }
+        }
+
+        adapter.actualizarLista(listaFiltrada);
+    }
+
+    private void filtrarPorCantidad(int cantidad) {
+        ArrayList<Roles> listaFiltrada = new ArrayList<>();
+
+        // Asegúrate de tener una lista original con todos los roles
+        for (int i = 0; i < Math.min(cantidad, listaRoles.size()); i++) {
+            listaFiltrada.add(listaRoles.get(i));
+        }
+
+        adapter.actualizarLista(listaFiltrada);
+    }
+
+
+
 }

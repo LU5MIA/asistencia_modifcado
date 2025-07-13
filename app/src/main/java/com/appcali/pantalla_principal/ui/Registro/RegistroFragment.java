@@ -14,7 +14,9 @@ import android.view.ViewGroup;
 import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.core.app.ActivityCompat;
+
 import com.appcali.pantalla_principal.BaseFragment;
+import com.appcali.pantalla_principal.Pantalla_opciones;
 import com.appcali.pantalla_principal.Connection.AsistenciasBD;
 import com.appcali.pantalla_principal.R;
 import com.appcali.pantalla_principal.databinding.FragmentRegistroBinding;
